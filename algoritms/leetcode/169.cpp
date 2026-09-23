@@ -33,10 +33,54 @@ int withSorting()
     return ans;
 }
 
+int moores()
+{
+    vector<int> nums = {2, 4, 5, 6, 8};
+    int n = nums.size();
+
+    int freq = 0, ans = 0;
+    for (int i = 0; i < n; i++)
+    {
+
+        if (freq == 0)
+        {
+            ans = nums[i];
+        }
+
+        if (ans == nums[i])
+        {
+            freq++;
+        }
+        else
+        {
+            freq--;
+        }
+    }
+
+    int count = 0;
+
+    for (int val : nums)
+    {
+        if (ans == val)
+        {
+            count++;
+        }
+    }
+    if (count > n / 2)
+    {
+        return ans;
+    }
+    else
+    {
+        return -1;
+    }
+    return ans;
+}
 int main()
 {
 
-    cout << withSorting();
+    // cout << withSorting();
+    cout << moores();
 
     return 0;
 }
