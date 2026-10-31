@@ -26,7 +26,7 @@ void dequeue()
 {
     if (front == -1)
     {
-        printf("Queue undeflow!!");
+        printf("Queue underflow!!");
         return;
     }
 
