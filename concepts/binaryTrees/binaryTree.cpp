@@ -141,6 +141,16 @@ int heightOfTree(Node *root)
     return max(left, right) + 1;
 }
 
+int sumOfNodes(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+
+    return root->data + sumOfNodes(root->left) + sumOfNodes(root->right);
+}
+
 int main()
 {
     vector<int> preOrderSeq = {1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1};
@@ -163,5 +173,8 @@ int main()
     cout << endl;
     cout << "Height of Tree: ";
     cout << heightOfTree(bs);
+    cout << endl;
+    cout << "Sum of Nodes: ";
+    cout << sumOfNodes(bs);
     return 0;
 }
